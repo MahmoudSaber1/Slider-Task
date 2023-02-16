@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Slider } from "./components";
+import { Flex, Heading } from "@chakra-ui/react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { experiences } from "./common/data";
+
+const App = () => {
+	return (
+		<Flex
+			height={"100vh"}
+			justifyContent="center"
+			w="100%"
+			py={[2, 5, 8]}
+			flexDirection={"column"}
+		>
+			<Heading
+				textAlign={"center"}
+				letterSpacing="1px"
+				fontStyle={"italic"}
+				fontSize={["md", "xl", "2xl", "4xl"]}
+				pb="5"
+			>
+				Simple React Slider (Task)
+			</Heading>
+
+			<Flex flexDirection={"column"}>
+				<Slider data={experiences} />
+			</Flex>
+		</Flex>
+	);
+};
 
 export default App;
